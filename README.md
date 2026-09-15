@@ -1,4 +1,4 @@
-# Ainostechnology
+# Ainos Technology
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,5 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ainostechnology is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
+Ainos Technology (北京爱诺斯科技有限公司, brand eYenurse) is a Beijing health-informatization company founded in 2016 that applies artificial intelligence to children's eye health and school health administration in China, selling to government and institutional buyers rather than to developers. Its products are a national vision and common-disease monitoring, early-warning and intervention system for education bureaus and schools, a student infectious-disease early-warning system, a 0-6 eye-health screening platform for maternal and child health institutions, AI screening hardware (smart visual-acuity charts and a module linking 130+ third-party ophthalmic instruments), and the eYenurse smart ophthalmology cloud platform. It reports deployments in all 31 provinces across 1,700+ institutions and is backed by Donghua Software (002065). It publishes no developer program, public API, SDK or machine-readable API contract.
+
+- https://www.eyenurse.net/
 - https://equityzen.com/company/ainostechnology

@@ -1,0 +1,143 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  Live anonymous GETs of the RFC 8615 well-known path list against every host this record knows —
+  the registrable domain eyenurse.net, www.eyenurse.net, the API host api.eyenurse.net named in the
+  site's own JavaScript bundle (https://eyenurse.net/js/app.3829f574.js), and the mobile host
+  m.eyenurse.net. No pointer is emitted: nothing here returned a real document.
+note: >-
+  eyenurse.net and www.eyenurse.net run a Vue history-mode single-page app behind a catch-all that
+  answers HTTP 200 with the identical 8,071-byte HTML shell for EVERY unknown path — a control probe of
+  https://www.eyenurse.net/zz-api-evangelist-control-9f3a returned the same 200 and the same body.
+  Every 200 recorded below on those two hosts is therefore a SOFT 404, not a served document, and is
+  marked shell: true. api.eyenurse.net (nginx in front of a Spring Boot backend) and m.eyenurse.net
+  return honest hard 404s. No WellKnown or SecurityTxt pointer is wired into apis.yml, because the
+  provider serves none of these documents.
+control_probe:
+  url: https://www.eyenurse.net/zz-api-evangelist-control-9f3a
+  status: 200
+  bytes: 8071
+  verdict: catch-all SPA shell; 200 on these hosts carries no information
+hosts:
+- host: eyenurse.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/api-catalog
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/agent.json
+    status: 200
+    shell: true
+    file: null
+  - path: /llms.txt
+    status: 200
+    shell: true
+    file: null
+- host: www.eyenurse.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/api-catalog
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    shell: true
+    file: null
+  - path: /.well-known/agent.json
+    status: 200
+    shell: true
+    file: null
+  - path: /llms.txt
+    status: 200
+    shell: true
+    file: null
+- host: api.eyenurse.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+- host: m.eyenurse.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null

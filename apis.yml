@@ -1,8 +1,18 @@
 aid: ainostechnology
-name: Ainostechnology
-description: 'Ainostechnology is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Ainos Technology
+description: >-
+  Ainos Technology (北京爱诺斯科技有限公司, brand eYenurse) is a Beijing health-informatization company founded
+  in 2016 that applies artificial intelligence to children's eye health and school health
+  administration in China, selling to government and institutional buyers rather than to developers.
+  Its products are a national vision and common-disease monitoring, early-warning and intervention
+  system for education bureaus and schools, a student infectious-disease early-warning system, a 0-6
+  eye-health screening platform for maternal and child health institutions, AI screening hardware
+  (smart visual-acuity charts and a module linking 130+ third-party ophthalmic instruments), and the
+  eYenurse smart ophthalmology cloud platform. It reports deployments in all 31 provinces across
+  1,700+ institutions and is backed by Donghua Software (002065). It publishes no developer program,
+  public API, SDK or machine-readable API contract.
 url: https://raw.githubusercontent.com/api-evangelist/ainostechnology/refs/heads/main/apis.yml
+image: https://www.eyenurse.net/img/logo.f7a8ff7d.svg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +22,14 @@ created: '2026-09-14'
 modified: '2026-09-14'
 tags:
 - Company
+- Healthcare
+- Artificial Intelligence
+- Public Health
+- Vision Screening
+- Ophthalmology
+- Education Technology
+- Health Informatization
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,68 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/ainostechnology-domain-security.yml
 - type: Website
+  url: https://www.eyenurse.net/
+- type: About
+  url: https://www.eyenurse.net/pc/about
+- type: Newsroom
+  url: https://www.eyenurse.net/pc/news
+- type: HelpCenter
+  url: https://www.eyenurse.net/mobi/helpcenter
+- type: SecondaryMarket
   url: https://equityzen.com/company/ainostechnology
+x-enrichment:
+  date: '2026-09-14'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Ainos Technology sells AI vision-screening systems to Chinese education bureaus, CDCs and eye
+    hospitals, and its entire public surface is the eyenurse.net Vue single-page marketing site
+    (products, solutions, cases, news, app downloads, a trial-request form and a customer login) whose
+    shipped router — read straight out of https://eyenurse.net/js/app.3829f574.js — contains no
+    developer, open-platform or documentation route at all, and whose 49 JavaScript chunks contain zero
+    occurrences of 接口, 开发者 or 开放平台 (the 14 hits for 对接 are all about pairing the AI
+    data-transfer module with 130+ third-party ophthalmic instruments, not about an API). The one API
+    host the company operates, api.eyenurse.net, is the site's own Spring Boot backend: its root serves
+    the stock nginx welcome page and /newdeparture/v2/api-docs, /v3/api-docs, /doc.html,
+    /swagger-ui.html and /swagger-resources all return Spring 404 JSON, so no contract is published
+    there either. Every 200 on www.eyenurse.net is a soft 404 — a control probe of
+    /zz-api-evangelist-control-9f3a returns the same 8,071-byte SPA shell as /openapi.json, /graphql
+    and /.well-known/agent-card.json — and docs./developer./open./portal.eyenurse.net exist only via a
+    wildcard A record with no matching TLS certificate.
+  evidence:
+  - url: https://www.eyenurse.net/
+    status: 200
+  - url: https://www.eyenurse.net/zz-api-evangelist-control-9f3a
+    status: 200
+  - url: https://www.eyenurse.net/openapi.json
+    status: 200
+  - url: https://www.eyenurse.net/.well-known/agent-card.json
+    status: 200
+  - url: https://api.eyenurse.net/
+    status: 200
+  - url: https://api.eyenurse.net/openapi.json
+    status: 404
+  - url: https://api.eyenurse.net/swagger.json
+    status: 404
+  - url: https://api.eyenurse.net/newdeparture/v3/api-docs
+    status: 404
+  - url: https://api.eyenurse.net/newdeparture/doc.html
+    status: 404
+  - url: https://api.eyenurse.net/graphql
+    status: 404
+  - url: https://api.eyenurse.net/.well-known/agent-card.json
+    status: 404
+  - url: https://api.eyenurse.net/.well-known/agent.json
+    status: 404
+  - url: https://api.eyenurse.net/llms.txt
+    status: 404
+  - url: https://m.eyenurse.net/.well-known/security.txt
+    status: 404
+  checked: '2026-09-14'
